@@ -1,0 +1,17 @@
+[Unit]
+Description=HTCondor Transfer Parser
+Documentation=https://opensciencegrid.github.io/gracc
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+ExecStart=/root/oneoff/run.sh
+WorkingDirectory=/root/oneoff
+TimeoutStopSec=20
+MemoryLimit=2G
+
+[Install]
+WantedBy=multi-user.target
